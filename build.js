@@ -9,68 +9,84 @@ const boxOptions = {
   bordStyle: 'round'
 }
 
-const lc = c.white.bold
+const card = color => {
+  const spacer = { label: '', value: '' }
+  const red = t => color ? c.red(t) : t
+  const blue = t => color ? c.blue(t) : t
+  const grey = t => color ? c.grey(t) : t
+  const white = t => color ? c.white(t) : t
+  const orange = t => color ? c.orange(t) : t
+  const boldWhite = t => color ? c.white.bold(t) : t
 
-const spacer = { label: '', value: '' }
-const data = {
-  name: {
-    label: '',
-    value: c.grey(`${c.white.bold('Joel Edwards')} | ${c.orange('@buzuli')}`)
-  },
-  work: {
-    label: '',
-    value: c.white(`Senior Data Engineer @ ${c.red('npm')}`)
-  },
-  npm: {
-    label: 'npm 📦',
-    value: c.blue(`https://npmjs.com/~${c.orange('buzuli')}`)
-  },
-  github: {
-    label: 'Github 🐙',
-    value: c.blue(`https://github.com/${c.orange('joeledwards')}`)
-  },
-  twitter: {
-    label: 'Twitter 🐦',
-    value: c.blue(`https://twitter.com/${c.orange('buzuli')}`)
-  },
-  linkedin: {
-    label: 'Linkedin 🔗',
-    value: c.blue(`https://linkedin.com/in/${c.orange('buzuli')}`)
-  },
-  npx: {
-    label: '$',
-    value: c.red(`npx ${c.white('buzuli')}`)
+  const data = {
+    name: {
+      label: '',
+      value: grey(`${boldWhite('Joel Edwards')} | ${orange('@buzuli')}`)
     },
+    work: {
+      label: '',
+      value: white(`Senior Data Engineer @ ${red('npm')}`)
+    },
+    npm: {
+      label: 'npm 📦',
+      value: blue(`https://npmjs.com/~${orange('buzuli')}`)
+    },
+    github: {
+      label: 'Github 🐙',
+      value: blue(`https://github.com/${orange('joeledwards')}`)
+    },
+    twitter: {
+      label: 'Twitter 🐦',
+      value: blue(`https://twitter.com/${orange('buzuli')}`)
+    },
+    linkedin: {
+      label: 'Linkedin 🔗',
+      value: blue(`https://linkedin.com/in/${orange('buzuli')}`)
+    },
+    npx: {
+      label: '$',
+      value: red(`npx ${white('buzuli')}`)
+    },
+  }
+
+  const cardLines = [
+    data.name,
+    data.work,
+    spacer,
+    data.npm,
+    data.github,
+    data.twitter,
+    data.linkedin,
+    spacer,
+    data.npx
+  ]
+
+  const maxLabelLen = Object.values(data).reduce((m, d) => Math.max(m, d.label.length), 0)
+  const text = cardLines
+    .map(({ label, value }) => {
+      const pad = ' '.repeat(maxLabelLen - label.length)
+      return grey(`${pad}${label}  ${value}`)
+    })
+    .join('\n')
+
+  const buffer = Buffer.from(orange(boxen(text, boxOptions)))
+
+  return buffer
 }
 
-const card = [
-  data.name,
-  data.work,
-  spacer,
-  data.npm,
-  data.github,
-  data.twitter,
-  data.linkedin,
-  spacer,
-  data.npx
-]
-
-const maxLabelLen = Object.values(data).reduce((m, d) => Math.max(m, d.label.length), 0)
-const text = card
-  .map(({ label, value }) => {
-    const pad = ' '.repeat(maxLabelLen - label.length)
-    return c.grey(`${pad}${label}  ${value}`)
-  })
-  .join('\n')
-
-const buffer = Buffer.from(c.orange(boxen(text, boxOptions)))
-
 const binDir = require.resolve('./bin/card.js')
-const datFile = path.resolve(path.dirname(binDir), 'card.dat')
+const colorFile = path.resolve(path.dirname(binDir), 'card.color')
+const plainFile = path.resolve(path.dirname(binDir), 'card.plain')
 
-fs.writeFile(datFile, buffer, error => {
-  if (error) {
-    console.error('Error assembling the card:', error)
-    process.exit(1)
-  }
-})
+const writeCard = (file, data, callback) => {
+  fs.writeFile(file, data, error => {
+    if (error) {
+      console.error(`Error writing card to file ${file}:`, error)
+      process.exit(1)
+    } else if (callback) {
+      callback()
+    }
+  })
+}
+
+writeCard(colorFile, card(true), () => writeCard(plainFile, card()))

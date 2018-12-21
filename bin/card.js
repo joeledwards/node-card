@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 
 const binDir = require.resolve('./card.js')
-const datFile = path.resolve(path.dirname(binDir), 'card.dat')
+const datFile = path.resolve(path.dirname(binDir), process.stdout.isTTY ? 'card.color' : 'card.plain')
 
 fs.readFile(datFile, (error, buffer) => {
   if (error) {
