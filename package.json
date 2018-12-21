@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git:joeledwards/node-card"
+    "url": "https://github.com/joeledwards/node-card"
   },
   "keywords": [
     "contact",
