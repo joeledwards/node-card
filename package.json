@@ -14,7 +14,8 @@
     "package.json",
     "README.md",
     "bin/card.js",
-    "bin/card.dat"
+    "bin/card.color",
+    "bin/card.plain"
   ],
   "repository": {
     "type": "git",
