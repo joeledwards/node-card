@@ -1,0 +1,28 @@
+{
+  "name": "@buzuli/card",
+  "version": "1.0.0",
+  "description": "Contact card for @buzuli",
+  "main": "index.js",
+  "bin": {
+    "card": "./bin/card.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:joeledwards/node-card"
+  },
+  "keywords": [
+    "contact",
+    "card",
+    "info",
+    "buzuli"
+  ],
+  "author": "Joel Edwards <joeledwards@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@buzuli/color": "^2.1.0",
+    "boxen": "^2.1.0"
+  }
+}
