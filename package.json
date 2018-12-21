@@ -1,6 +1,6 @@
 {
   "name": "buzuli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Contact card for @buzuli",
   "main": "index.js",
   "bin": {
