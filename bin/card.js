@@ -39,7 +39,7 @@ const data = {
   },
   npx: {
     label: '$',
-    value: c.red(`npx ${c.white('@buzuli/card')}`)
+    value: c.red(`npx ${c.white('buzuli')}`)
     },
 }
 
