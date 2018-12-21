@@ -15,26 +15,26 @@ const spacer = { label: '', value: '' }
 const data = {
   name: {
     label: '',
-    value: c.grey(`${c.white.bold('Joel Edwards')} / ${c.orange('@buzuli')}`)
+    value: c.grey(`${c.white.bold('Joel Edwards')} | ${c.orange('@buzuli')}`)
   },
   work: {
     label: '',
     value: c.white(`Senior Data Engineer @ ${c.red('npm')}`)
   },
   npm: {
-    label: 'npm:',
+    label: 'npm 📦',
     value: c.blue(`https://npmjs.com/~${c.orange('buzuli')}`)
   },
   github: {
-    label: 'Github:',
+    label: 'Github 🐙',
     value: c.blue(`https://github.com/${c.orange('joeledwards')}`)
   },
   twitter: {
-    label: 'Twitter:',
+    label: 'Twitter 🐦',
     value: c.blue(`https://twitter.com/${c.orange('buzuli')}`)
   },
   linkedin: {
-    label: 'Linkedin:',
+    label: 'Linkedin 🔗',
     value: c.blue(`https://linkedin.com/in/${c.orange('buzuli')}`)
   },
   npx: {
