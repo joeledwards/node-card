@@ -35,7 +35,7 @@ const data = {
   },
   linkedin: {
     label: 'Linkedin',
-    value: c.blue(`https://linkedin.com/${c.orange('buzuli')}`)
+    value: c.blue(`https://linkedin.com/in/${c.orange('buzuli')}`)
   },
   npx: {
     label: 'npx',
