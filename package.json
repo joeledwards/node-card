@@ -7,8 +7,15 @@
     "card": "./bin/card.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js",
+    "prepare": "npm run build"
   },
+  "files": [
+    "package.json",
+    "README.md",
+    "bin/card.js",
+    "bin/card.dat"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/joeledwards/node-card"
@@ -21,7 +28,7 @@
   ],
   "author": "Joel Edwards <joeledwards@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@buzuli/color": "^2.1.0",
     "boxen": "^2.1.0"
   }
