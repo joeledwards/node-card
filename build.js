@@ -43,6 +43,10 @@ const card = color => {
       label: 'Linkedin 🔗',
       value: blue(`https://linkedin.com/in/${orange('buzuli')}`)
     },
+    keybase: {
+      label: 'Keybase 🔐',
+      value: blue(`https://keybase.io/${orange('buzuli')}`)
+    },
     npx: {
       label: '$',
       value: red(`npx ${white('buzuli')}`)
@@ -57,6 +61,7 @@ const card = color => {
     data.github,
     data.twitter,
     data.linkedin,
+    data.keybase,
     spacer,
     data.npx
   ]
