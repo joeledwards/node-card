@@ -25,7 +25,7 @@ const card = color => {
     },
     work: {
       label: '',
-      value: white(`Senior Data Engineer @ ${red('npm')}`)
+      value: white(`Sr Systems Engineer @ ${blue('Simon Data')}`)
     },
     npm: {
       label: 'npm 📦',

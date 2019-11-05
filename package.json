@@ -4,6 +4,7 @@
   "description": "Contact card for @buzuli",
   "main": "index.js",
   "bin": {
+    "buzuli": "./bin/card.js",
     "card": "./bin/card.js"
   },
   "scripts": {
@@ -30,7 +31,7 @@
   "author": "Joel Edwards <joeledwards@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@buzuli/color": "^2.1.0",
-    "boxen": "^2.1.0"
+    "@buzuli/color": "^2.2.2",
+    "boxen": "^4.1.0"
   }
 }
