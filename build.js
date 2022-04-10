@@ -25,23 +25,23 @@ const card = color => {
     },
     work: {
       label: '',
-      value: white(`Sr Systems Engineer @ ${blue('Simon Data')}`)
-    },
-    npm: {
-      label: 'npm 📦',
-      value: blue(`https://npmjs.com/~${orange('buzuli')}`)
+      value: white(`Staff Software Engineer @ ${blue('Simon Data')}`)
     },
     github: {
       label: 'Github 🐙',
       value: blue(`https://github.com/${orange('joeledwards')}`)
     },
-    twitter: {
-      label: 'Twitter 🐦',
-      value: blue(`https://twitter.com/${orange('buzuli')}`)
+    npm: {
+      label: 'npm 📦',
+      value: blue(`https://npmjs.com/~${orange('buzuli')}`)
     },
     linkedin: {
       label: 'Linkedin 🔗',
       value: blue(`https://linkedin.com/in/${orange('buzuli')}`)
+    },
+    twitter: {
+      label: 'Twitter 🐦',
+      value: blue(`https://twitter.com/${orange('buzuli')}`)
     },
     keybase: {
       label: 'Keybase 🔐',
