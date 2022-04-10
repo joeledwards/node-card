@@ -57,10 +57,10 @@ const card = color => {
     data.name,
     data.work,
     spacer,
-    data.npm,
     data.github,
-    data.twitter,
+    data.npm,
     data.linkedin,
+    data.twitter,
     data.keybase,
     spacer,
     data.npx
